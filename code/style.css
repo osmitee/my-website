@@ -1,0 +1,20 @@
+body {
+    background-color: #c0a9ff;
+    background-size: cover;
+    height: 100vh;
+}
+.header {
+    width: 100vw;
+    margin-top: -2%;
+    margin-left:-0.6%;
+    padding: 0%;
+    position: fixed;
+}
+
+.title {
+    position: absolute;
+    width: 40vw;
+    z-index: 1;
+    margin-left:2%;
+
+}
