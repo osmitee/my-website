@@ -2,6 +2,7 @@ body {
     background-color: #c0a9ff;
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
 }
 .header {
     width: 100vw;
@@ -26,12 +27,12 @@ body {
 }
 
 .menu {
-    display: grid;
+    display: flex;
     position: fixed;
     top: 17vh;
     left: 1vw;
-    grid-gap: 4.2%;
     z-index: 2;
+    gap: 10vw;
 }
 
 .menu-about,
@@ -39,8 +40,9 @@ body {
 .menu-contact,
 .menu-closet,
 .menu-music {
-        width: 21vh;
-    transition: 0.5s ease-out;
+    width: 21vh;
+    transition: opacity 0.5s ease-out;
+    opacity: 100%;
     cursor: pointer;
 }
 
@@ -57,13 +59,13 @@ body {
     position: fixed;
     height: 85vh;
     top: 14vh;
-    left: 0vw;
+    left: 1vw;
 }
 
 .menu-elems {
     position: fixed;
-    display: grid;
-    left: 2.6vw;
+    display: inline-grid;
+    left: 2.5vw;
     top: 20.4vh;
     /* opacity: 50%; */
     grid-gap: 8.2%;
@@ -76,14 +78,49 @@ body {
 .menu-music:hover {
     opacity: 0%;
     transition: 0.5s ease-out;
-    scale: 120%;
-    rotate: 5deg;
+    filter:blur(5px);
+    /* scale: 120%;
+    rotate: 5deg; */
 }
 
 .logo {
     position: fixed;
     width: 7vw;
-    z-index: 2;
+    z-index: 3;
     right: 2vw;
     top: 0.5vh;
+}
+
+iframe {
+    display: flex;
+    border:none;
+    border-radius: 20px;
+    /* box-shadow: white 1px 1px 20px ; */
+    width: 83vw;
+    height: 83vh;
+    position: relative;
+    left: 15vw;
+    top: 14vh;
+    gap: 10vw;
+}
+
+.menu-screen-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* flex-direction: row; */
+    align-items: center;
+    /* justify-items: center; */
+    padding: 0vh 0vh 20vw 1vw;
+    gap: 10vw;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    right: 2vh;
+    bottom: 9vh;
+        
+    /* display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 100vh;
+    align-items: center;
+    justify-items: center; */
 }
