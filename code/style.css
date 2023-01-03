@@ -90,24 +90,20 @@ body {
 }
 
 iframe {
-    display: flex;
     border:none;
     border-radius: 20px;
-    /* box-shadow: white 1px 1px 20px ; */
     width: 83vw;
     height: 83vh;
     position:relative;
-    left: 16vw;
+    left: 32vh;
     top: 14vh;
 }
 
 .menu-screen-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* flex-direction: row; */
     align-items:center;
-    /* justify-items: center; */
-    padding: 0vh 0vh 20vw 1vw;
+    padding: 0vh 10vh 20vw 1vw;
     gap: 0vw;
     position: relative;
     width: 10vw;
