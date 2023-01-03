@@ -22,99 +22,48 @@ body {
     top: 1vh;
 }
 
-/* .container {
-    position: fixed;
-} */
-
-.menu {
-    position: relative;
-    top: 17vh;
-    left: 1vw;
-    z-index: 2;
-}
-
-.menu-about,
-.menu-work,
-.menu-contact,
-.menu-closet,
-.menu-music {
-    width: 21vh;
-    transition: opacity 0.5s ease-out;
-    opacity: 100%;
-    cursor: pointer;
-}
-
-/* .menu-bg {
-    position: fixed;
-    top: 11%;
-    z-index: -1;
-    width: 14vw;
-    height: 88vh;
-    left: -0.1%;
-} */
-
 .menu-full {
     position:fixed;
     height: 85vh;
     top: 14vh;
-    left: 1vw;
-}
-
-.menu-elems {
-    position: fixed;
-    display: inline-grid;
-    left: 2.5vw;
-    top: 20.4vh;
-    /* opacity: 50%; */
-    grid-gap: 8.2%;
-}
-
-.menu-about:hover,
-.menu-work:hover,
-.menu-contact:hover,
-.menu-closet:hover,
-.menu-music:hover {
-    opacity: 0%;
-    transition: 0.5s ease-out;
-    filter:blur(5px);
-    /* scale: 120%;
-    rotate: 5deg; */
+    left: 2vh;
 }
 
 .logo {
     position: fixed;
     width: 7vw;
     z-index: 3;
-    right: 2vw;
+    right: 4vh;
     top: 0.5vh;
 }
 
 iframe {
-    border:none;
+    width: 84%;
+    height: 41%;
+    border: none;
     border-radius: 20px;
-    width: 83vw;
-    height: 83vh;
-    position:relative;
-    left: 32vh;
-    top: 14vh;
+    margin-left: 15%;
+    margin-top: 14vh;
+    visibility: hidden;
 }
 
-.menu-screen-container {
+.menu-elems {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items:center;
-    padding: 0vh 10vh 20vw 1vw;
-    gap: 0vw;
-    position: relative;
-    width: 10vw;
-    height: 100vh;
-    right: 3vh;
-    bottom: 9vh;
-    justify-content: space-between;
-        
-    /* display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 100vh;
-    align-items: center;
-    justify-items: center; */
+    grid-template-rows: repeat (5, 1fr);
+    position: absolute;
+    left: 6vh;
+    top:20vh;
+    z-index: 2;
+    gap: 5.2vh;
+}
+.menu-elems img {
+    width: 20vh;
+    transition: 0.5s ease-out opacity;
+    cursor: pointer;
+} 
+
+.menu-elems img:hover {
+    opacity: 0%;
+    filter: blur(10px);
+    transition: 0.5s ease-in;
 }

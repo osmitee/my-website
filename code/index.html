@@ -4,7 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="website-logo.png">
+    <link rel="icon" href="elements/website-logo.png">
+    <script src="script.js"></script>
     <title>smitee oberoi</title>
 </head>
 <body>
@@ -12,21 +13,38 @@
     <img src="elements/website-logo.png" class="logo">
     <img class="title" src="elements/smiteeoberoi.png">
 <img class="header" src="elements/header-bg.png"></img>
-<div class="menu-screen-container">
-<div class="menu">
+
+    <main>
+        <div class="menu-screen-container">
+            <nav class="menu">
+                <img src="elements/menu-full.png" class="menu-full">
+            </nav>
+            <div class="menu-elems">
+                <img src="elements/about-ol.png" class="menu-about">
+                <img src="elements/work-ol.png" class="menu-work" onclick="work()">
+                <img src="elements/contact-ol.png" class="menu-contact">
+                <img src="elements/closet-ol.png" class="menu-closet">
+                <img src="elements/music-ol.png" class="menu-music">
+            </div>
+        </div>
+        <iframe src="work.html" id="work-screen"></iframe>
+    </main>
+
+<!-- <div class="menu-screen-container">
+<main class="menu">
     <img src="elements/menu-full.png" class="menu-full">
     <div class="menu-elems">
         <img src="elements/about-ol.png" class="menu-about">
-        <img src="elements/work-ol.png" class="menu-work">
+        <img src="elements/work-ol.png" class="menu-work" onclick="work()">
         <img src="elements/contact-ol.png" class="menu-contact">
         <img src="elements/closet-ol.png" class="menu-closet">
         <img src="elements/music-ol.png" class="menu-music">
+    </main>
     </div>
-    </div>
-<iframe class="work" src="work.html"></iframe>
+<iframe class="work" src="work.html" id="work-screen"></iframe>
 </div>
 </div>
-</div>  
+</div>   -->
 </body>
 </html>
 
