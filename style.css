@@ -34,15 +34,16 @@ main {
     display: grid;
     grid-template-columns: 1fr 8fr;
     gap: 1rem;
-    padding: 2rem;
+    /* padding: 2rem; */
     height: 100vh;
     position: fixed;
-    top: 10vh;
+    top: 15vh;
+    padding:0 2rem 0 2rem;
     left: -1vh;
 }
 
 .menu-screen-container .menu-full {
-    width: 33vh;
+    width: 29.5vh;
     min-width: 150px;
     margin-top: -2.5vh;
 }
@@ -52,12 +53,12 @@ iframe {
     height: 82vh;
     border: none;
     border-radius: 20px;
+    min-height: 420px;
 }
 
 .menu {
     position: relative;
     width: fit-content;
-    border: black solid 1px;
 }
 
 .menu-elems img {
@@ -70,18 +71,16 @@ iframe {
     display: inline-grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 2.5rem;
-    z-index: 1;
+    grid-column-gap: 1.5vh;
+    grid-row-gap: 2rem;
     position: absolute;
-    left: 2vh;
-    top: 1vh;
-    /* background-color: aliceblue; */
-    border: 1px solid red;
+    left: 1vh;
+    top: 0vh;
     padding: 4vh;
     min-width: 100px;
-    width: 21vh;
-    height: 84vh;
+    min-height: 380px;
+    /* width: 20vh; */
+    height: 75.3vh;
     justify-content: center;
     align-items: center;
 }
