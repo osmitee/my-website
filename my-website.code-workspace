@@ -1,8 +1,7 @@
 {
   "folders": [
 	{
-		"name": "my-website",
-		"path": ".."
+		"path": "."
 	}
 ],
   "settings": {}

@@ -1,0 +1,23 @@
+body {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.grid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    padding: 5%;
+}
+
+.wikibook {
+    width: 60vh;
+}
+
+.avant-garden {
+    width: 44vh;
+}
+
+.record-label {
+    width: 60vh;
+}
