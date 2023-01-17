@@ -1,11 +1,11 @@
 body {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     overflow-x: scroll;
 }
 
 .grid {
     display: inline-grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 5rem;
     padding: 5%;
 }
@@ -19,5 +19,9 @@ body {
 }
 
 .record-label {
+    width: 60vh;
+}
+
+.blossom {
     width: 60vh;
 }
