@@ -1,27 +1,44 @@
 body {
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     overflow-x: scroll;
+    background-image: radial-gradient(#fedaff, #a373ff);
+    background-attachment: fixed;
+}
+
+.arrow {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+    /* cursor: pointer; */
 }
 
 .grid {
     display: inline-grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
     padding: 5%;
 }
 
 .wikibook {
     width: 60vh;
-}
+    }
 
 .avant-garden {
     width: 44vh;
 }
 
 .record-label {
-    width: 60vh;
+    width: 65vh;
 }
 
 .blossom {
     width: 60vh;
+}
+
+.y2k {
+    width: 65vh;
+}
+
+.grid img:hover {
+    fill: #a373ff;
 }

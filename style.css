@@ -49,12 +49,14 @@ main {
 }
 
 iframe {
-    width: 100%;
+    width: 98%;
     height: 82vh;
-    border: none;
+    border: solid 12px #c7b5fc;
     border-radius: 20px;
     min-height: 420px;
+    margin-top: -0.8%;
     /* visibility: hidden; */
+
 }
 
 .menu {
