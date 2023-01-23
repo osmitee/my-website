@@ -1,0 +1,81 @@
+body {
+    background-color: #f4e6fd;
+    height: 100%;
+    width: 99vw;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: 100vh;
+    top:20vh;
+    padding:6rem 3rem 0 1rem;
+    left: -1vh;
+    margin-left: 30%;
+}
+
+.wblogo {
+    width: 100%;
+}
+
+.w7logo {
+    width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+@font-face {
+    font-family: "karrik";
+    src: url("elements/Karrik-Regular.woff") format('woff');
+}
+
+.header {
+    font-family: karrik;
+    font-size: 20pt;
+    line-height: 120%pt;
+    color:rgb(137, 92, 235)
+}
+
+.body {
+    font-size: 12pt;
+    font-family: Pt sans;
+    font-weight: 500;
+    padding-left: 0;
+    line-height: 150%;
+    color: rgb(71, 71, 71);
+}
+
+.main-vid {
+    width:210%;
+    border-radius: 20px;
+}
+
+.text {
+    position: fixed;
+    z-index: 1;
+    left: 0vh;
+    top: 18vh;
+    margin-right: 70%;
+    margin-left: 2%;
+    padding: 3.5%;
+    height: 100vh;
+    background-color: rgb(237, 215, 250);
+    padding: 20px;
+    border-radius: 20px;
+    border: solid rgba(255, 255, 255, 0.15) 12px;
+}
+
+.arrow {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+}
+
+.arrow-n {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+    right: 0vh;
+}

@@ -9,7 +9,6 @@ body {
     position: fixed;
     width: 25vh;
     padding: 1%;
-    /* cursor: pointer; */
 }
 
 .grid {
@@ -33,10 +32,11 @@ body {
 
 .blossom {
     width: 60vh;
+    padding-left: 10%;
 }
 
 .y2k {
-    width: 65vh;
+    width: 80vh;
 }
 
 .grid img:hover {
