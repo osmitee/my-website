@@ -1,5 +1,5 @@
 body {
-    background-color: #f4e6fd;
+    background-color: #c07cc3;
     height: 100%;
     width: 99vw;
 }
@@ -21,11 +21,12 @@ body {
     width: 100%;
 }
 
-.w7logo {
-    width: 100%;
+.mirror {
+    width: 56%;
     grid-column-start: 1;
     grid-row-start: 2;
     grid-row-end: 3;
+    margin-top: -3%;
 }
 
 @font-face {
@@ -85,39 +86,42 @@ body {
     right: 0vh;
 }
 
-.mockup {
-    width: 100%;
+.programme {
+    width: 150%;
     grid-column-start: 2;
     grid-row-start: 2;
     grid-row-end: 3;
+    margin-left: -40%;
+    margin-top: 3%;
+    z-index: 2;
 }
 
-.pen {
-    width: 50%;
-    grid-column-start: 2;
-    grid-row-start: 2;
-    transform: rotate(80deg);
-    margin-top: 30%;
-    margin-bottom: -40%;
-    margin-left: 30%;
-
-
+.poster {
+    width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 3;
 }
 
 .raveena {
     width: 100%;
-    grid-row-start: 3;
-    /* margin-top: -65%; */
+    grid-row-start: 4;
+    grid-column: 2;
+    z-index: 1;
+    margin-top: -138%;
+    margin-left: -33%;
 }
 
-.ytmockup {
-    grid-row-start: 3;
+.main-reflection {
+    grid-row-start: 4;
     grid-column-start: 2;
     width: 100%;
+    margin-top: -40%;
+    z-index: 2;
+    margin-left: -10%;
 }
 
 .webmockup {
-    grid-row-start: 4;
+    grid-row-start: 5;
     width: 100%;
     padding-top: -80px;
 }
