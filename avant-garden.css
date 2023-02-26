@@ -22,11 +22,12 @@ body {
 }
 
 .mirror {
-    width: 56%;
+    width: 85%;
     grid-column-start: 1;
     grid-row-start: 2;
     grid-row-end: 3;
-    margin-top: -3%;
+    margin-top:60%;
+    margin-left: 2%;
 }
 
 @font-face {
@@ -56,10 +57,29 @@ body {
     border-radius: 20px;
     grid-column: span 2;
 }
+.lipstick {
+    width: 18%;
+    z-index: 1;
+    position: fixed;
+    bottom: 1%;
+    left: 1%;
+    visibility: visible;
+    cursor: pointer;
+}
+
+.lipstick2 {
+    width: 18%;
+    z-index: 1;
+    position: fixed;
+    bottom: 1%;
+    left: 1%;
+    visibility: hidden;
+    cursor: pointer;
+}
 
 .text {
     position: fixed;
-    z-index: 1;
+    z-index: -1;
     left: 0vh;
     top: 16vh;
     margin-right: 70%;
@@ -71,6 +91,7 @@ body {
     border-radius: 20px;
     border: solid rgba(255, 255, 255, 0.15) 12px;
     overflow: scroll;
+
 }
 
 .arrow {
@@ -87,13 +108,12 @@ body {
 }
 
 .programme {
-    width: 150%;
+    width: 115%;
     grid-column-start: 2;
-    grid-row-start: 2;
+    grid-row-start: 3;
     grid-row-end: 3;
-    margin-left: -40%;
-    margin-top: 3%;
-    z-index: 2;
+   margin-left: -10%;
+    margin-top:-76%;
 }
 
 .poster {
@@ -102,33 +122,28 @@ body {
     grid-row-start: 3;
 }
 
-.raveena {
-    width: 100%;
-    grid-row-start: 4;
-    grid-column: 2;
-    z-index: 1;
-    margin-top: -138%;
-    margin-left: -33%;
-}
-
-.main-reflection {
-    grid-row-start: 4;
-    grid-column-start: 2;
-    width: 100%;
-    margin-top: -40%;
+.float {
+    width: 50%;
     z-index: 2;
-    margin-left: -10%;
+    position: fixed;
+    margin-top: -1%;
+    margin-left: 10%;
+    visibility: visible;
 }
 
-.webmockup {
-    grid-row-start: 5;
-    width: 100%;
-    padding-top: -80px;
+.ticket {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    width: 130%;
+    margin-top: 0%;
+    z-index: 2;
+    /* margin-left: 5%; */
 }
 
-.necklace {
-    grid-row-start: 4;
+.phone {
+    grid-row-start: 2;
     grid-column-start: 2;
-        width: 100%;
-        margin-top: -45%;
+    width: 60%;
+    margin-top: -10%;
+    margin-left: 40%;
 }
