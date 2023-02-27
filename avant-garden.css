@@ -61,8 +61,8 @@ body {
     width: 18%;
     z-index: 1;
     position: fixed;
-    bottom: 1%;
-    left: 1%;
+    bottom: 3%;
+    left: 3%;
     visibility: visible;
     cursor: pointer;
 }
@@ -71,8 +71,8 @@ body {
     width: 18%;
     z-index: 1;
     position: fixed;
-    bottom: 1%;
-    left: 1%;
+    bottom: 3%;
+    left: 3%;
     visibility: hidden;
     cursor: pointer;
 }
