@@ -1,0 +1,98 @@
+body {
+    background-color: #f4e6fd;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1rem;
+    margin-left: 31%;
+    position: fixed;
+}
+
+.mySlides {
+    width: 280%;
+}
+
+.displaycontainer {
+    grid-column-start: 2;
+    position: relative;
+    height: 100%;
+    right:90%;
+    top: -2%
+}
+
+.none {
+    display: none;
+}
+
+.button {
+    width: 40%;
+    z-index: 1;
+    position: relative;
+    top: 45%;
+    left: -5%;
+}
+
+.btnleft {
+    grid-column-start: 1;
+}
+
+
+.btnright {
+    position: relative;
+    grid-column-start: 3;
+    left: 63%;
+}
+
+
+@font-face {
+    font-family: "karrik";
+    src: url("elements/Karrik-Regular.woff") format('woff');
+}
+
+.header {
+    font-family: karrik;
+    font-size: 2.3vw;
+    line-height: 120%pt;
+    color: rgb(188, 109, 237)
+}
+
+.body {
+    font-size: 1.2vw;
+    font-family: Pt sans;
+    font-weight: 500;
+    padding-left: 0;
+    line-height: 150%;
+    color: rgb(84, 61, 61);
+    overflow: scroll;
+}
+
+.text {
+    position: fixed;
+    z-index: 1;
+    left: 0vh;
+    top: 16vh;
+    margin-right: 70%;
+    margin-left: 2%;
+    padding: 3.5%;
+    height: 70vh;
+    background-color: rgb(237, 215, 250);
+    padding: 20px;
+    border-radius: 20px;
+    border: solid rgba(255, 255, 255, 0.15) 12px;
+    overflow: scroll;
+}
+
+.arrow {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+}
+
+.arrow-n {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+    right: 0vh;
+}
