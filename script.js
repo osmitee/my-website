@@ -38,3 +38,14 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";
 }
+
+function toggleMute() {
+  var myAudio = document.getElementById('audio_playo24');
+  myAudio.muted = !myAudio.muted;
+  var x = document.getElementById("mute");
+  if (x.style.opacity === "0") {
+    x.style.opacity = "1";
+  } else {
+    x.style.opacity = "0";
+  }
+}

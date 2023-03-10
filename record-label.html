@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/ulr6bkh.css">
     <link rel="stylesheet" href="record-label.css">
+    <script src="script.js"></script>
     <title>Record Label</title>
 </head>
 <body>
     <a href="projects.html"><img src="elements/arrowl.png" class="arrow"></a>
-        <a href="wikibook.html"><img src="elements/arrowl-n.png" class="arrow-n"></a>
+       <a href="cyberblobism.html"><img src="elements/arrowl-n.png" class="arrow-n"></a>
+        <img src="elements/mutebtn.png" alt="unmute" class="unmute" id="unmute" onclick="muteOpacity()">
+        <img src="elements/unmutebtn.png" alt="mute" class="mute" id="mute" onclick="toggleMute()">
     <main class="parent">
-        <video src="elements/wb/wb-vid.mp4" class="main-vid" autoplay loop controls muted></video>
+         <video src="elements/wb/wb-vid.webm" class="main-vid" autoplay loop muted id="audio_playo24"></video> 
         <video src="elements/wb/postersmockup.mp4" class="w7logo" autoplay loop muted></video>
         <video src="elements/wb/mockup.mp4" class="mockup" autoplay loop muted></video>
         <img src="elements/wb/fluffypen-mockup-transparent.png" class="pen">
