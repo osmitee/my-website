@@ -43,3 +43,9 @@ body {
     fill: #a373ff;
 }
 
+.arrow-n {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+    right: 0vh;
+}

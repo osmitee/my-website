@@ -1,0 +1,103 @@
+/* .container {
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 9fr;
+    justify-content: center;
+    /* padding-top: 7%; */
+
+/* .mySlides {
+    width: 90%;
+    grid-column: 2;
+    grid-row-start: 3;
+    padding-top:1%;
+}  */
+
+/* .displaycontainer {
+    grid-column-start: 2;
+    position: relative;
+    height: 100%;
+    top: 1%;
+} */
+
+/* .none {
+    display: none;
+}
+
+.button {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    top: 45%;
+    grid-row-start: 3;
+}
+
+.btnleft {
+    grid-column-start: 1;
+}
+
+
+.btnright {
+    position: relative;
+    grid-column-start: 3;
+    /* left: 63%; */
+
+/* 
+
+body {
+    background-color: #f4e6fd;
+    height: 100%;
+    width: 99vw;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: max-content;
+    gap: 1rem;
+    height: 100vh;
+    padding: 15vh 3rem 0 1rem;
+    left: -1vh;
+    margin-left: 30%;
+    position: relative;
+    z-index: -1;
+} */
+
+body {
+    background-color: #000;
+}
+
+.grid {
+    margin: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content;
+    gap: 2rem;
+    padding-top: 10%;
+}
+
+video {
+    width: 100%;
+}
+
+.arrow {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+    z-index: 3;
+    grid-row-start: 1;
+}
+
+.arrow-n {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+    right: 0vh;
+    z-index: 3;
+    grid-row-start: 1;
+}
+
+.arrows {
+    margin-top: -4%;
+}

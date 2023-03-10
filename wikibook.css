@@ -95,4 +95,5 @@ body {
     width: 25vh;
     padding: 1%;
     right: 0vh;
+    z-index: 3;
 }
