@@ -2,34 +2,74 @@ body {
     background-color: #f4e6fd;
 }
 
-.grid {
-    margin: 5%;
+.parent {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 2rem;
-    position: relative;
-    padding-top: 56.25%;
-    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: max-content;
+    gap: 1rem;
+    height: 100vh;
+    padding: 15vh 3rem 0 1rem;
+    left: -1vh;
+    margin-left: 30%;
+    position: absolute;
+    z-index: -1;
 }
 
-/* Then style the iframe to fit in the container div with full height and width */
-iframe {
-    position: absolute;
-    top: 14%;
-    left: 0;
-    bottom: 0;
-    right: 0;
+.w7logo {
     width: 100%;
-    height: 80%;
+    grid-column: span 2;
+    grid-row-start: 2;
     border-radius: 10px;
+}
+
+@font-face {
+    font-family: "karrik";
+    src: url("elements/Karrik-Regular.woff") format('woff');
+}
+
+.header {
+    font-family: karrik;
+    font-size: 2.3vw;
+    line-height: 120%pt;
+    color: rgb(188, 109, 237)
+}
+
+.body {
+    font-size: 1.2vw;
+    font-family: Pt sans;
+    font-weight: 500;
+    padding-left: 0;
+    line-height: 150%;
+    color: rgb(84, 61, 61);
+    overflow: scroll;
+}
+
+.main-vid {
+    width: 100%;
+    border-radius: 10px;
+    grid-column: span 2;
+}
+
+.text {
+    position: fixed;
+    z-index: 1;
+    left: 0vh;
+    top: 16vh;
+    margin-right: 70%;
+    margin-left: 2%;
+    padding: 3.5%;
+    height: 70vh;
+    background-color: rgb(237, 215, 250);
+    padding: 20px;
+    border-radius: 20px;
+    border: solid rgba(255, 255, 255, 0.15) 12px;
+    overflow: scroll;
 }
 
 .arrow {
     position: fixed;
     width: 25vh;
     padding: 1%;
-    z-index: 3;
-    grid-row-start: 1;
 }
 
 .arrow-n {
@@ -37,14 +77,18 @@ iframe {
     width: 25vh;
     padding: 1%;
     right: 0vh;
-    z-index: 3;
-    grid-row-start: 1;
 }
 
-.arrows {
-    margin-top: -4%;
+a:link {
+    color: hotpink;
+    text-decoration: none;
 }
 
-.cc {
-    margin-top: 55%;
+a:visited {
+        color: hotpink;
+            text-decoration: none;
+}
+
+b {
+    color: hotpink;
 }
