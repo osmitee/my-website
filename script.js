@@ -3,6 +3,7 @@
 function link1() {
   var frame = document.getElementById("frame");
   frame.src = "about.html"
+  console.log('helllooorrrr testing')
 }
 function link2() {
   var frame = document.getElementById("frame");
