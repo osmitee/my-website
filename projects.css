@@ -1,51 +1,51 @@
 body {
-    overflow-y: hidden;
-    overflow-x: scroll;
-    background-image: radial-gradient(#fedaff, #a373ff);
-    background-attachment: fixed;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background-image: radial-gradient(#fedaff, #a373ff);
+  background-attachment: fixed;
 }
 
 .arrow {
-    position: fixed;
-    width: 25vh;
-    padding: 1%;
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
 }
 
 .grid {
-    display: inline-grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 3rem;
-    padding: 5%;
+  display: inline-grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem;
+  padding: 5%;
 }
 
 .wikibook {
-    width: 60vh;
-    }
+  width: 60vh;
+}
 
 .avant-garden {
-    width: 44vh;
+  width: 44vh;
 }
 
 .record-label {
-    width: 65vh;
+  width: 65vh;
 }
 
 .blossom {
-    width: 60vh;
-    padding-left: 10%;
+  width: 60vh;
+  padding-left: 10%;
 }
 
 .y2k {
-    width: 80vh;
+  width: 80vh;
 }
 
 .grid img:hover {
-    fill: #a373ff;
+  fill: #a373ff;
 }
 
 .arrow-n {
-    position: fixed;
-    width: 25vh;
-    padding: 1%;
-    right: 0vh;
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
+  right: 0vh;
 }

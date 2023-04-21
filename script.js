@@ -1,7 +1,28 @@
-function work() {
-    let work = document.getElementById("work-screen");
-    work.style.visibility = "visible"; 
+
+
+function link1() {
+  var frame = document.getElementById("frame");
+  frame.src = "about.html"
 }
+function link2() {
+  var frame = document.getElementById("frame");
+  frame.src = "work.html"
+}
+function link3() {
+  var frame = document.getElementById("frame");
+  frame.src = "contact.html"
+}
+
+function link4() {
+  var frame = document.getElementById("frame");
+  frame.src = "closet.html"
+}
+
+function link5() {
+  var frame = document.getElementById("frame");
+  frame.src = "music.html"
+}
+
 
 function lipstick() {
     let poster = document.getElementById("float");

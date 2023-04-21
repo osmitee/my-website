@@ -1,0 +1,45 @@
+body {
+  background: url("elements/contact/contact-bg.png") no-repeat;
+  background-size: 100vw 103vh;
+  height: max-content;
+  background-color: #a0abff;
+  overflow: hidden;
+}
+
+.container {
+  top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  margin-left: 30.5%;
+  margin-top: -9.5%;
+  z-index: -1;
+  position: absolute;
+}
+
+.container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 7vw;
+}
+
+.phone {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -5%;
+  width: 60vw;
+}
+
+.phone-container {
+  top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  margin-left: 22%;
+  z-index: -1;
+  position: absolute;
+}
