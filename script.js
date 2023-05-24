@@ -8,6 +8,7 @@ function link1() {
 function link2() {
   var frame = document.getElementById("frame");
   frame.src = "work.html"
+  console.log('helllooorrrr testing 2')
 }
 function link3() {
   var frame = document.getElementById("frame");
