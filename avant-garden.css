@@ -1,149 +1,149 @@
 body {
-    background-color: #f4e6fd;
-    height: 100%;
-    width: 99vw;
+  background-color: #f4e6fd;
+  height: 100%;
+  width: 99vw;
 }
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: max-content;
-    gap: 1rem;
-    height: 100vh;
-    padding:15vh 3rem 0 1rem;
-    left: -1vh;
-    margin-left: 30%;
-    position: relative;
-    z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: max-content;
+  gap: 1rem;
+  height: 100vh;
+  padding: 15vh 3rem 0 1rem;
+  left: -1vh;
+  margin-left: 30%;
+  position: relative;
+  z-index: -1;
 }
 
 .wblogo {
-    width: 100%;
+  width: 100%;
 }
 
 .mirror {
-    width: 85%;
-    grid-column-start: 1;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    margin-top:60%;
-    margin-left: 2%;
+  width: 85%;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-top: 60%;
+  margin-left: 2%;
 }
 
 @font-face {
-    font-family: "karrik";
-    src: url("elements/Karrik-Regular.woff") format('woff');
+  font-family: "karrik";
+  src: url("elements/Karrik-Regular.woff") format("woff");
 }
 
 .header {
-    font-family: karrik;
-    font-size: 2.3vw;
-    line-height: 120%pt;
-    color:rgb(188, 109, 237)
+  font-family: karrik;
+  font-size: 2.3vw;
+  line-height: 120%pt;
+  color: rgb(188, 109, 237);
 }
 
 .body {
-    font-size: 1.2vw;
-    font-family: Pt sans;
-    font-weight: 500;
-    padding-left: 0;
-    line-height: 150%;
-    color: rgb(84, 61, 61);
-    overflow: scroll;
+  font-size: 1.2vw;
+  font-family: Pt sans;
+  font-weight: 500;
+  padding-left: 0;
+  line-height: 150%;
+  color: rgb(84, 61, 61);
+  overflow: scroll;
 }
 
 .main-vid {
-    width:100%;
-    border-radius: 20px;
-    grid-column: span 2;
+  width: 100%;
+  border-radius: 20px;
+  grid-column: span 2;
 }
 .lipstick {
-    width: 18%;
-    z-index: 1;
-    position: fixed;
-    bottom: 3%;
-    left: 3%;
-    visibility: visible;
-    cursor: pointer;
+  width: 18%;
+  z-index: 2;
+  position: fixed;
+  bottom: 3%;
+  left: 3%;
+  visibility: visible;
+  cursor: pointer;
 }
 
 .lipstick2 {
-    width: 18%;
-    z-index: 1;
-    position: fixed;
-    bottom: 3%;
-    left: 3%;
-    visibility: hidden;
-    cursor: pointer;
+  width: 18%;
+  z-index: 2;
+  position: fixed;
+  bottom: 3%;
+  left: 3%;
+  visibility: hidden;
+  cursor: pointer;
 }
 
 .text {
-    position: fixed;
-    z-index: -1;
-    left: 0vh;
-    top: 16vh;
-    margin-right: 70%;
-    margin-left: 2%;
-    padding: 3.5%;
-    height: 70vh;
-    background-color: rgb(237, 215, 250);
-    padding: 20px;
-    border-radius: 20px;
-    border: solid rgba(255, 255, 255, 0.15) 12px;
-    overflow: scroll;
-
+  position: fixed;
+  z-index: 1;
+  left: 0vh;
+  top: 16vh;
+  margin-right: 70%;
+  margin-left: 2%;
+  padding: 3.5%;
+  height: 70vh;
+  background-color: rgb(237, 215, 250);
+  padding: 20px;
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0.15) 12px;
+  overflow: scroll;
 }
 
 .arrow {
-    position: fixed;
-    width: 25vh;
-    padding: 1%;
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
 }
 
 .arrow-n {
-    position: fixed;
-    width: 25vh;
-    padding: 1%;
-    right: 0vh;
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
+  right: 0vh;
 }
 
 .programme {
-    width: 115%;
-    grid-column-start: 2;
-    grid-row-start: 3;
-    grid-row-end: 3;
-   margin-left: -10%;
-    margin-top:-76%;
+  width: 115%;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  margin-left: -10%;
+  margin-top: -76%;
 }
 
 .poster {
-    width: 100%;
-    grid-column-start: 1;
-    grid-row-start: 3;
+  width: 100%;
+  grid-column-start: 1;
+  grid-row-start: 3;
 }
 
 .float {
-    width: 60%;
-    z-index: 2;
-    position: fixed;
-    margin-top: -1%;
-    margin-left: 10%;
-    visibility: visible;
+  width: 60%;
+  z-index: 2;
+  position: fixed;
+  margin-top: -1%;
+  margin-left: 10%;
+  visibility: visible;
+  pointer-events: none;
 }
 
 .ticket {
-    grid-row-start: 2;
-    grid-column-start: 1;
-    width: 130%;
-    margin-top: 0%;
-    z-index: 2;
-    /* margin-left: 5%; */
+  grid-row-start: 2;
+  grid-column-start: 1;
+  width: 130%;
+  margin-top: 0%;
+  z-index: 2;
+  /* margin-left: 5%; */
 }
 
 .phone {
-    grid-row-start: 2;
-    grid-column-start: 2;
-    width: 60%;
-    margin-top: -10%;
-    margin-left: 40%;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  width: 60%;
+  margin-top: -10%;
+  margin-left: 40%;
 }
