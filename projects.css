@@ -13,7 +13,7 @@ body {
 
 .grid {
   display: inline-grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 3rem;
   padding: 5%;
 }
@@ -37,6 +37,12 @@ body {
 
 .y2k {
   width: 80vh;
+}
+
+.imaginevents {
+  width: 70vh;
+  margin-top: -5%;
+  margin-left: -10%;
 }
 
 .grid img:hover {
