@@ -1,0 +1,149 @@
+body {
+    background-color: #f4e6fd;
+    height: 100%;
+    width: 99vw;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: max-content;
+    gap: 1rem;
+    height: 100vh;
+    padding:15vh 3rem 0 1rem;
+    left: -1vh;
+    margin-left: 30%;
+    position: relative;
+    z-index: -1;
+}
+
+.wblogo {
+    width: 100%;
+}
+
+.w7logo {
+    width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+@font-face {
+    font-family: "karrik";
+    src: url("elements/Karrik-Regular.woff") format('woff');
+}
+
+.header {
+    font-family: karrik;
+    font-size: 2.3vw;
+    line-height: 120%pt;
+    color:rgb(188, 109, 237)
+}
+
+.body {
+    font-size: 1.2vw;
+    font-family: Pt sans;
+    font-weight: 500;
+    padding-left: 0;
+    line-height: 150%;
+    color: rgb(84, 61, 61);
+    overflow: scroll;
+}
+
+.main-vid {
+    width: 100%;
+    border-radius: 20px;
+    grid-column: span 2;
+}
+
+.text {
+    position: fixed;
+    z-index: 1;
+    left: 0vh;
+    top: 16vh;
+    margin-right: 70%;
+    margin-left: 2%;
+    padding: 3.5%;
+    height: 70vh;
+    background-color: rgb(237, 215, 250);
+    padding: 20px;
+    border-radius: 20px;
+    border: solid rgba(255, 255, 255, 0.15) 12px;
+    overflow: scroll;
+}
+
+.arrow {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+}
+
+.arrow-n {
+    position: fixed;
+    width: 25vh;
+    padding: 1%;
+    right: 0vh;
+}
+
+.mockup {
+    width: 100%;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.pen {
+    width: 50%;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    transform: rotate(80deg);
+    margin-top: 30%;
+    margin-bottom: -40%;
+    margin-left: 30%;
+
+
+}
+
+.raveena {
+    width: 100%;
+    grid-row-start: 3;
+    /* margin-top: -65%; */
+}
+
+.ytmockup {
+    grid-row-start: 3;
+    grid-column-start: 2;
+    width: 100%;
+}
+
+.webmockup {
+    grid-row-start: 4;
+    width: 100%;
+    padding-top: -80px;
+}
+
+.necklace {
+    grid-row-start: 4;
+    grid-column-start: 2;
+        width: 100%;
+        margin-top: -45%;
+}
+
+.unmute,
+.mute {
+    width: 7%;
+    z-index: 1;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+}
+
+.mute {
+    opacity: 1;
+    z-index: 1;
+}
+
+.unmute {
+    opacity: 1;
+
+}
