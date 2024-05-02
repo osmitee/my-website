@@ -13,7 +13,7 @@ body {
 
 .grid {
   display: inline-grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 3rem;
   padding: 5%;
 }
@@ -48,6 +48,7 @@ body {
 .undress {
   width: 60vh;
   margin-top: 20%;
+  margin-left: -7%;
 }
 
 .grid img:hover {
