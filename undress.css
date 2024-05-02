@@ -7,19 +7,19 @@ body {
   grid-template-columns: 1fr 2fr 1fr;
   gap: 1rem;
   margin-left: 31%;
+  top: 17%;
   position: fixed;
 }
 
 .mySlides {
-  width: 100%;
+  width: 150%;
 }
 
 .displaycontainer {
   grid-column-start: 2;
   position: relative;
   height: 100%;
-  right: 84%;
-  top: -2%;
+  right: 28%;
 }
 
 .none {
@@ -27,7 +27,7 @@ body {
 }
 
 .button {
-  width: 40%;
+  width: 50%;
   z-index: 1;
   position: relative;
   top: 45%;
@@ -41,7 +41,7 @@ body {
 .btnright {
   position: relative;
   grid-column-start: 3;
-  left: 63%;
+  left: 50%;
 }
 
 @font-face {
