@@ -113,3 +113,8 @@ iframe {
   transition: 0.6s ease-out;
   cursor: pointer;
 }
+
+.menu-elems .menu-closet:hover,
+.menu-elems .menu-music:hover {
+  cursor: not-allowed;
+}
