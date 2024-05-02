@@ -45,6 +45,11 @@ body {
   margin-left: -10%;
 }
 
+.undress {
+  width: 60vh;
+  margin-top: 20%;
+}
+
 .grid img:hover {
   fill: #a373ff;
 }
