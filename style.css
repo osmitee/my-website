@@ -1,8 +1,9 @@
 body {
   background-color: #c0a9ff;
   background-size: cover;
-  height: 200vh;
+  height: 100vh; /* Ensure body height matches viewport height */
   overflow: hidden;
+  margin: 0; /* Remove default body margin */
 }
 .header {
   width: 100vw;
@@ -117,4 +118,42 @@ iframe {
 .menu-elems .menu-closet:hover,
 .menu-elems .menu-music:hover {
   cursor: not-allowed;
+}
+
+.mobile-message {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .mobile-message {
+    display: flex; /* Show mobile message on mobile screens */
+    flex-direction: column; /* Stack logo and message image vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    padding: 20px; /* Add padding to prevent content from touching screen edges */
+    background-image: url("elements/mobile/mobile-bg.png"); /* Set background image */
+    background-size: cover; /* Ensure the background covers the entire element */
+    background-position: center; /* Center the background image */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full viewport height to center content */
+    margin: 0;
+  }
+
+  .mobile-message .logo {
+    width: 50%;
+    max-width: 150px;
+    margin-bottom: 20px; /* Add space between the logo and the image */
+    position: static; /* Ensure the logo is part of the flow */
+  }
+
+  .mobile-message img {
+    max-width: 100%; /* Ensure the image fits within the screen */
+    height: auto;
+  }
+
+  .container {
+    display: none; /* Hide main content on mobile screens */
+  }
 }
