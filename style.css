@@ -137,7 +137,6 @@ iframe {
     background-position: center; /* Center the background image */
     color: #fff;
     height: 100vh; /* Full viewport height to center content */
-    width: 100%;
     margin: 0;
     pointer-events: none;
   }
