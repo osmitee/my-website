@@ -134,7 +134,7 @@ iframe {
 /* Prevent image dragging */
 .no-drag {
   -webkit-user-drag: none; /* Safari and Chrome */
-  user-drag: none; /* Non-prefixed version */
+  pointer-events: none;
 }
 
 @media (max-width: 767px) {
