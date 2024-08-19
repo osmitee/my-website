@@ -124,33 +124,29 @@ iframe {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .mobile-message {
     display: flex; /* Show mobile message on mobile screens */
-    flex-direction: column; /* Stack logo and message image vertically */
+    flex-direction: column; /* Stack main image vertically */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     text-align: center;
     padding: 20px; /* Add padding to prevent content from touching screen edges */
     background-image: url("elements/mobile/mobile-bg.png"); /* Set background image */
     background-size: cover; /* Ensure the background covers the entire element */
-    background-position: center; /* Center the background image */
+    background-position: center center; /* Center the background image both vertically and horizontally */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
     color: #fff;
+    font-family: Arial, sans-serif;
     height: 100vh; /* Full viewport height to center content */
     margin: 0;
-    pointer-events: none;
-  }
-
-  .mobile-message .logo {
-    width: 50%;
-    max-width: 150px;
-    margin-bottom: 20px; /* Add space between the logo and the image */
-    position: static; /* Ensure the logo is part of the flow */
   }
 
   .mobile-message img {
-    max-width: 100%; /* Ensure the image fits within the screen */
-    height: auto;
+    max-width: 90%; /* Ensure the image fits within the screen, leave some space on sides */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 80%; /* Limit the height to avoid squishing */
+    object-fit: contain; /* Ensure the image is contained within its box without stretching */
   }
 
   .container {
