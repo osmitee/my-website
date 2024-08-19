@@ -136,9 +136,9 @@ iframe {
     background-size: cover; /* Ensure the background covers the entire element */
     background-position: center; /* Center the background image */
     color: #fff;
-    font-family: Arial, sans-serif;
     height: 100vh; /* Full viewport height to center content */
     margin: 0;
+    pointer-events: none;
   }
 
   .mobile-message .logo {
