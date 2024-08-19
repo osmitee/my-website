@@ -125,6 +125,10 @@ iframe {
 }
 
 @media (max-width: 767px) {
+  body {
+    background-color: none;
+  }
+
   .mobile-message {
     display: flex; /* Show mobile message on mobile screens */
     flex-direction: column; /* Stack main image vertically */
