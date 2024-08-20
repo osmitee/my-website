@@ -51,6 +51,11 @@ body {
   margin-left: -7%;
 }
 
+.thesis {
+  width: 62vh;
+  margin-left: 10%;
+}
+
 .grid img:hover {
   fill: #a373ff;
 }
