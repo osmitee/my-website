@@ -127,13 +127,33 @@ body {
   margin-top: -45%;
 }
 
-.unmute,
-.mute {
-  width: 7%;
-  z-index: 1;
+.welcome,
+.backstage {
+  width: 11%;
   position: fixed;
   right: 2%;
   bottom: 2%;
+}
+
+.welcome {
+  transform: rotate(10deg);
+  filter: drop-shadow(0 0rem 0.2rem rgba(0, 0, 0, 0.3));
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+.backstage {
+  z-index: 1;
+  transform: rotate(-5deg);
+  bottom: 4%;
+  transition: z-index 0.1s ease-in-out, transform 0.3s ease;
+}
+
+.backstage:hover {
+  z-index: 3;
+  transform: rotate(-20deg) translateY(-20px);
+  transition: z-index 0.1s ease-in-out, transform 0.3s ease;
+  filter: drop-shadow(0 0rem 0.2rem rgba(0, 0, 0, 0.3));
 }
 
 .mute {

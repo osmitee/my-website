@@ -1,4 +1,4 @@
-
+console.log("JavaScript file loaded");
 
 function link1() {
   var frame = document.getElementById("frame");
