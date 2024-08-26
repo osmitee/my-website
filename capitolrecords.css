@@ -1,0 +1,62 @@
+body {
+  background-color: #f4e6fd;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll; /* Prevent horizontal scrolling */
+}
+
+.arrow {
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
+  z-index: 10; /* Ensures arrows are on top of other content */
+}
+
+.arrow-l {
+  top: 1rem; /* Position left arrow */
+  left: 1rem;
+}
+
+.arrow-n {
+  top: 1rem; /* Position right arrow */
+  right: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1rem; /* Gap between grid items */
+  padding: 6rem 2rem 0 2rem; /* Space for arrows and padding inside the grid */
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  box-sizing: border-box; /* Include padding and border in element’s total width and height */
+  overflow-y: auto; /* Enables vertical scrolling */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.grid-item {
+  position: relative;
+}
+
+/* Ensure items maintain their aspect ratios */
+.grid-item img,
+.grid-item video {
+  position: absolute; /* Position absolute to fill the container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Square items */
+.square {
+  aspect-ratio: 1 / 1; /* 1:1 aspect ratio */
+}
+
+/* Portrait items */
+.portrait {
+  aspect-ratio: 9 / 16; /* 9:16 aspect ratio */
+}
