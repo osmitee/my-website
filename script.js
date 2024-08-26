@@ -72,3 +72,9 @@ function toggleMute() {
     x.style.opacity = "0";
   }
 }
+
+let horizontal = document.getElementById("container");
+horizontal.addEventListener("wheel", (e)=>{
+e.preventDefault();
+horizontal.scrollLeft += e.deltaY;
+})

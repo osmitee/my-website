@@ -1,8 +1,21 @@
 body {
   overflow-y: hidden;
-  overflow-x: scroll;
-  background-image: radial-gradient(#fedaff, #a373ff);
+  /* overflow-x: scroll; */
+  background-image: radial-gradient(hsl(298, 100%, 93%), #a373ff);
   background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: hsla(285, 50%, 50%, 0.441);
+  box-shadow: inset 1px 1px 5px rgba(165, 41, 179, 0.2);
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 1px;
+  background-image: url(elements/scroll-bar.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .arrow {
@@ -13,10 +26,12 @@ body {
 
 .grid {
   display: inline-grid;
-  /* grid-template-columns: repeat(9, 1fr); */
   grid-auto-flow: column;
   gap: 3rem;
   padding: 5%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: none;
 }
 
 .wikibook {
