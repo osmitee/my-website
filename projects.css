@@ -13,7 +13,8 @@ body {
 
 .grid {
   display: inline-grid;
-  grid-template-columns: repeat(7, 1fr);
+  /* grid-template-columns: repeat(9, 1fr); */
+  grid-auto-flow: column;
   gap: 3rem;
   padding: 5%;
 }
@@ -54,6 +55,11 @@ body {
 .thesis {
   width: 62vh;
   margin-left: 10%;
+}
+
+.capitol {
+  width: 65vh;
+  /* margin-left: 10%; */
 }
 
 .grid img:hover {
