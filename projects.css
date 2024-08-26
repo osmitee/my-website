@@ -16,6 +16,11 @@ body {
   background-image: url(elements/scroll-bar.png);
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
 }
 
 .arrow {
