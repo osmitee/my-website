@@ -64,6 +64,7 @@ body {
   width: 70vh;
   margin-top: -5%;
   margin-left: -10%;
+  cursor: not-allowed;
 }
 
 .undress {
