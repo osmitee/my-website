@@ -1,94 +1,107 @@
 body {
-    background-color: #f4e6fd;
+  background-color: #f4e6fd;
 }
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: max-content;
-    gap: 1rem;
-    height: 100vh;
-    padding: 15vh 3rem 0 1rem;
-    left: -1vh;
-    margin-left: 30%;
-    position: absolute;
-    z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: max-content;
+  gap: 1rem;
+  height: fit-content;
+  padding: 15vh 0rem 0 1rem; /* Add padding to the bottom */
+  left: -1vh;
+  margin-left: 30%;
+  position: absolute;
+  z-index: -1;
+  padding-bottom: 1rem;
 }
 
 .w7logo {
-    width: 100%;
-    grid-column: span 2;
-    grid-row-start: 2;
-    border-radius: 10px;
+  width: 100%;
+  grid-column: span 2;
+  grid-row-start: 2;
+  border-radius: 10px;
+}
+
+.keyframes {
+  display: inline-block;
+  width: 100%;
+  grid-column: span 2;
+  grid-row-start: 3;
+  border-radius: 10px;
 }
 
 @font-face {
-    font-family: "karrik";
-    src: url("elements/Karrik-Regular.woff") format('woff');
+  font-family: "karrik";
+  src: url("elements/Karrik-Regular.woff") format("woff");
 }
 
 .header {
-    font-family: karrik;
-    font-size: 2.3vw;
-    line-height: 120%pt;
-    color: rgb(188, 109, 237)
+  font-family: karrik;
+  font-size: 2.3vw;
+  line-height: 120%pt;
+  color: rgb(188, 109, 237);
 }
 
 .body {
-    font-size: 1.2vw;
-    font-family: Pt sans;
-    font-weight: 500;
-    padding-left: 0;
-    line-height: 150%;
-    color: rgb(84, 61, 61);
-    overflow: scroll;
+  font-size: 1.2vw;
+  font-family: Pt sans;
+  font-weight: 500;
+  padding-left: 0;
+  line-height: 150%;
+  color: rgb(84, 61, 61);
+  overflow: scroll;
 }
 
 .main-vid {
-    width: 100%;
-    border-radius: 10px;
-    grid-column: span 2;
+  width: 100%;
+  border-radius: 10px;
+  grid-column: span 2;
 }
 
 .text {
-    position: fixed;
-    z-index: 1;
-    left: 0vh;
-    top: 16vh;
-    margin-right: 70%;
-    margin-left: 2%;
-    padding: 3.5%;
-    height: 70vh;
-    background-color: rgb(237, 215, 250);
-    padding: 20px;
-    border-radius: 20px;
-    border: solid rgba(255, 255, 255, 0.15) 12px;
-    overflow: scroll;
+  position: fixed;
+  z-index: 1;
+  left: 0vh;
+  top: 16vh;
+  margin-right: 70%;
+  margin-left: 2%;
+  padding: 3.5%;
+  height: 70vh;
+  background-color: rgb(237, 215, 250);
+  padding: 20px;
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0.15) 12px;
+  overflow: scroll;
 }
 
 .arrow {
-    position: fixed;
-    width: 25vh;
-    padding: 1%;
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
 }
 
 .arrow-n {
-    position: fixed;
-    width: 25vh;
-    padding: 1%;
-    right: 0vh;
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
+  right: 0vh;
 }
 
 a:link {
-    color: hotpink;
-    text-decoration: none;
+  color: hotpink;
+  text-decoration: none;
 }
 
 a:visited {
-        color: hotpink;
-            text-decoration: none;
+  color: hotpink;
+  text-decoration: none;
 }
 
 b {
-    color: hotpink;
+  color: hotpink;
+}
+
+.spacer {
+  height: 5rem; /* Height of the space below the grid */
 }
