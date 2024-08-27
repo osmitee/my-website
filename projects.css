@@ -14,9 +14,11 @@ body {
 ::-webkit-scrollbar-thumb {
   border-radius: 1px;
   background-image: url(elements/scroll-bar.png);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   cursor: grab;
+  z-index: 2;
+  border-radius: 200px;
 }
 
 ::-webkit-scrollbar-thumb:active {

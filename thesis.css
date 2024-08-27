@@ -2,11 +2,12 @@ body {
   background-color: #f4e6fd;
   height: 100%;
   width: 99vw;
+  overflow: hidden;
 }
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(1, auto);
   grid-template-rows: max-content;
   gap: 1rem;
   height: 100vh;
@@ -15,17 +16,7 @@ body {
   margin-left: 30%;
   position: relative;
   z-index: -1;
-}
-
-.wblogo {
-  width: 100%;
-}
-
-.w7logo {
-  width: 100%;
-  grid-column-start: 1;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  overflow: hidden;
 }
 
 @font-face {
@@ -51,7 +42,7 @@ body {
 }
 
 .main-vid {
-  width: 100%;
+  width: 67.5vw;
   border-radius: 20px;
   grid-column: span 2;
 }
