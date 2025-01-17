@@ -1,0 +1,47 @@
+body {
+  background-color: #f4e6fd;
+}
+
+background .page {
+  display: block;
+  margin: auto;
+  width: 45%;
+  padding-top: 3%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+video {
+  width: 70vw;
+  border-radius: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.arrow {
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
+  z-index: 3;
+  grid-row-start: 1;
+}
+
+.arrow-n {
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
+  right: 0vh;
+  z-index: 3;
+  grid-row-start: 1;
+}
+
+.arrows {
+  margin-top: 0%;
+}
