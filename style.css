@@ -115,10 +115,10 @@ iframe {
   cursor: pointer;
 }
 
-.menu-elems .menu-closet:hover,
-.menu-elems .menu-music:hover {
+.menu-elems .menu-closet:hover {
   cursor: not-allowed;
 }
+/* .menu-elems .menu-music:hover */
 
 .mobile-message {
   display: none;
