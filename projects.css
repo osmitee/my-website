@@ -77,16 +77,25 @@ body {
 
 .thesis {
   width: 62vh;
-  margin-left: 10%;
 }
 
 .capitol {
-  width: 65vh;
-  /* margin-left: 10%; */
+  width: 85vh;
+  margin-left: -5%;
+  overflow: visible !important;
+}
+
+.grid img {
+  background-color: transparent;
+  clip-path: inset(-10px); /* Expands the visible area */
+  contain: paint;
+  transition: 0.5s;
 }
 
 .grid img:hover {
-  fill: #a373ff;
+  filter: drop-shadow(1px 1px 25px hsl(294, 100%, 96%));
+  overflow: visible !important;
+  transition: 0.2s;
 }
 
 .arrow-n {
