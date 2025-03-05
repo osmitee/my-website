@@ -1,3 +1,9 @@
+html,
+body,
+* {
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
 body {
   background-color: #c0a9ff;
   background-size: cover;
@@ -112,7 +118,7 @@ iframe {
   opacity: 5%;
   filter: blur(8px);
   transition: 0.6s ease-out;
-  cursor: pointer;
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .menu-elems .menu-closet:hover {

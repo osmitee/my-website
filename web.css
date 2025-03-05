@@ -1,5 +1,10 @@
 body {
   background-color: #f4e6fd;
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .parent {

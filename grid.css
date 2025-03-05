@@ -4,6 +4,7 @@ main {
     gap: 1rem;
     padding: 2rem;
     height: 100vh;
+      cursor: url("elements/hairbrush-cursor.png"), auto;
 }
 .menu-screen-container .menu-full {
     width: 33vh;

@@ -1,6 +1,13 @@
 body {
   background-color: #f4e6fd;
+  cursor: url("elements/hairbrush-cursor.png"), auto;
 }
+
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
+}
+
 
 .container {
   display: grid;
@@ -32,6 +39,7 @@ body {
   position: relative;
   top: 45%;
   left: -5%;
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .btnleft {

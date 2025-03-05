@@ -3,6 +3,7 @@ body {
   /* overflow-x: scroll; */
   background-image: radial-gradient(hsl(298, 100%, 93%), #a373ff);
   background-attachment: fixed;
+  cursor: url("elements/hairbrush-cursor.png"), auto;
 }
 
 ::-webkit-scrollbar {
@@ -29,6 +30,7 @@ body {
   position: fixed;
   width: 25vh;
   padding: 1%;
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .grid {
@@ -90,6 +92,7 @@ body {
   clip-path: inset(-10px); /* Expands the visible area */
   contain: paint;
   transition: 0.5s;
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .grid img:hover {
@@ -103,4 +106,5 @@ body {
   width: 25vh;
   padding: 1%;
   right: 0vh;
+  cursor: url("elements/pointer-cursor.png"), auto;
 }

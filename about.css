@@ -1,3 +1,7 @@
+html {
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
 body {
   background: url("elements/about/bg.png") no-repeat;
   background-size: 100vw 120%;

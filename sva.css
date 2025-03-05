@@ -4,6 +4,7 @@ body {
   height: 100vh;
   background-color: #e0bfe1;
   overflow: hidden;
+  cursor: url("elements/hairbrush-cursor.png"), auto;
 }
 
 .container {
@@ -25,4 +26,8 @@ body {
   width: 20vw;
   align-items: center;
   justify-items: center;
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
 }

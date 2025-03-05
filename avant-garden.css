@@ -2,6 +2,11 @@ body {
   background-color: #f4e6fd;
   height: 100%;
   width: 99vw;
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .parent {
@@ -64,7 +69,7 @@ body {
   bottom: 3%;
   left: 3%;
   visibility: visible;
-  cursor: pointer;
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .lipstick2 {
@@ -75,6 +80,7 @@ body {
   left: 3%;
   visibility: hidden;
   cursor: pointer;
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .text {

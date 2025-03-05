@@ -1,3 +1,8 @@
+html,
+body {
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
 body {
   background: url("elements/contact/contact-bg.png") no-repeat;
   background-size: 100vw 103vh;
@@ -46,4 +51,8 @@ body {
   margin-left: 22%;
   z-index: -1;
   position: absolute;
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
 }

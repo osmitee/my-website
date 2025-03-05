@@ -5,6 +5,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: scroll; /* Prevent horizontal scrolling */
+  cursor: url("elements/hairbrush-cursor.png"), auto;
 }
 
 .arrow {
@@ -60,4 +61,8 @@ body {
 /* Portrait items */
 .portrait {
   aspect-ratio: 9 / 16; /* 9:16 aspect ratio */
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
 }

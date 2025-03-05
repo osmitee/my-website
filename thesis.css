@@ -1,8 +1,16 @@
+html {
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
 body {
   background-color: #f4e6fd;
   height: 100%;
   width: 99vw;
   overflow: hidden;
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .parent {

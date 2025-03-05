@@ -1,3 +1,11 @@
+body {
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
+}
+
 .arrow {
   position: fixed;
   width: 25vh;
@@ -17,4 +25,8 @@
 
 .arrows {
   margin-top: 0%;
+}
+
+video::-webkit-media-controls {
+  cursor: url("elements/pointer-cursor.png"), auto;
 }
