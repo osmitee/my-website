@@ -64,13 +64,6 @@ body {
   width: 80vh;
 }
 
-.imaginevents {
-  width: 70vh;
-  margin-top: -5%;
-  margin-left: -10%;
-  cursor: not-allowed;
-}
-
 .undress {
   width: 60vh;
   margin-top: 20%;
@@ -101,8 +94,7 @@ a {
 .grid img:hover {
   filter: drop-shadow(1px 1px 20px rgb(255, 200, 235));
   overflow: visible !important;
-  transition: 0.3s ease-in-out;
-  scale: 105%;
+  transition: 0.3s;
 }
 
 .arrow-n {
@@ -111,4 +103,11 @@ a {
   padding: 1%;
   right: 0vh;
   cursor: url("elements/pointer-cursor.png"), auto;
+}
+
+.imaginevents {
+  width: 70vh;
+  margin-top: -5%;
+  margin-left: -10%;
+  cursor: not-allowed;
 }
