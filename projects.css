@@ -1,7 +1,7 @@
 body {
   overflow-y: hidden;
   /* overflow-x: scroll; */
-  background-image: radial-gradient(hsl(298, 100%, 93%), #a373ff);
+  background-image: radial-gradient(hsl(299, 38%, 74%), #a373ff);
   background-attachment: fixed;
   cursor: url("elements/hairbrush-cursor.png"), auto;
 }
@@ -92,13 +92,17 @@ body {
   clip-path: inset(-10px); /* Expands the visible area */
   contain: paint;
   transition: 0.5s;
+}
+
+a {
   cursor: url("elements/pointer-cursor.png"), auto;
 }
 
 .grid img:hover {
-  filter: drop-shadow(1px 1px 25px hsl(294, 100%, 96%));
+  filter: drop-shadow(1px 1px 20px rgb(255, 200, 235));
   overflow: visible !important;
-  transition: 0.2s;
+  transition: 0.3s ease-in-out;
+  scale: 105%;
 }
 
 .arrow-n {
