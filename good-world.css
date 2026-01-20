@@ -1,0 +1,129 @@
+body {
+  background-color: #f4e6fd;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll; /* Prevent horizontal scrolling */
+  cursor: url("elements/hairbrush-cursor.png"), auto;
+}
+
+.arrow {
+  position: fixed;
+  width: 25vh;
+  padding: 1%;
+  z-index: 10; /* Ensures arrows are on top of other content */
+}
+
+.arrow-l {
+  top: 1rem; /* Position left arrow */
+  left: 1rem;
+}
+
+.arrow-n {
+  top: 1rem; /* Position right arrow */
+  right: 1rem;
+}
+
+.grid-container {
+  column-count: 4; /* number of columns */
+  column-gap: 1rem;
+  padding: 6rem 2rem 2rem;
+}
+
+.grid-item {
+  position: relative;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.grid-item img,
+.grid-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+a {
+  cursor: url("elements/pointer-cursor.png"), auto;
+  display: inline-block;
+  width: 100%;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.lightbox img,
+.lightbox video {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 20px;
+}
+
+.grid-item:not(a .grid-item) img,
+.grid-item:not(a .grid-item) video {
+  cursor: url("elements/pointer-cursor.png"), auto;
+}
+
+.lightbox-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 10000;
+  cursor: url("elements/pointer-cursor.png"), auto;
+  opacity: 0.85;
+}
+
+.lightbox-arrow:hover {
+  opacity: 1;
+}
+
+.lightbox-arrow img {
+  width: 18vh; /* adjust to taste */
+  height: auto;
+  pointer-events: none; /* important */
+}
+
+.lightbox-arrow.prev {
+  left: 2rem;
+}
+
+.lightbox-arrow.next {
+  right: 2rem;
+}
+
+.lightbox-caption {
+  color: #fff; /* White text for dark overlay */
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 80vw;
+  word-wrap: break-word;
+}
