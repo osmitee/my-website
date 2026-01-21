@@ -76,12 +76,13 @@ a {
   max-height: 80vh;
 }
 
-.lightbox img,
-.lightbox video {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
+.lightbox-hero img,
+.lightbox-hero video {
+  width: 100%; /* fill available width */
+  max-width: 80vw; /* but don’t exceed viewport width */
+  height: auto; /* maintain aspect ratio */
   border-radius: 20px;
+  display: block;
 }
 
 .grid-item:not(a .grid-item) img,
@@ -126,4 +127,80 @@ a {
   margin-top: 1rem;
   max-width: 80vw;
   word-wrap: break-word;
+  font-family: "karrik";
+  src: url("elements/Karrik-Regular.woff") format("woff");
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* start at top, we'll handle vertical centering in hero */
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden; /* prevents extra scrollbars */
+  padding: 1rem;
+  position: relative;
+}
+
+.lightbox-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertically center shorter media */
+  width: 100%;
+  height: 600px; /* fixed base height, adjust to your tallest image/video */
+  max-height: 80vh; /* responsive */
+  overflow: hidden; /* hide anything outside */
+  position: relative;
+}
+
+.lightbox-hero img,
+.lightbox-hero video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* keeps aspect ratio */
+  display: block;
+  margin: auto; /* centers shorter media */
+}
+
+#lightbox-dots,
+.lightbox-caption {
+  margin-top: 1rem;
+  text-align: center;
+  flex-shrink: 0; /* keeps them below the media */
+}
+
+.lightbox-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.lightbox-dots button.active {
+  background-color: #fff; /* active dot */
+}
+
+#lightbox-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.lightbox-heart {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background: url("elements/website-logo.png") no-repeat center/contain; /* temporary heart */
+  opacity: 0.4; /* inactive state */
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.lightbox-heart.active {
+  opacity: 1; /* active dot */
 }

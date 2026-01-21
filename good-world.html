@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/ulr6bkh.css">
     <link rel="stylesheet" href="good-world.css">
-    <title>Capitol Records</title>
+    <title>Good World</title>
 </head>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -16,62 +16,105 @@
         const lightboxImg = document.getElementById("lightbox-img");
         const lightboxVideo = document.getElementById("lightbox-video");
         const lightboxCaption = document.getElementById("lightbox-caption");
+        const dotsContainer = document.getElementById("lightbox-dots");
         const prevBtn = document.querySelector(".lightbox-arrow.prev");
         const nextBtn = document.querySelector(".lightbox-arrow.next");
 
         const items = Array.from(document.querySelectorAll(".grid-item"));
         let currentIndex = 0;
+        let autoSlideInterval;
+        let currentDotIndex = 0;
+        let dotElements = [];
 
+        function showHero(src, isVideo = false) {
+            if (isVideo || src.endsWith(".mp4")) {
+                lightboxImg.style.display = "none";
+                lightboxVideo.style.display = "block";
+                lightboxVideo.src = src;
+                lightboxVideo.muted = true;
+                lightboxVideo.loop = true;
+                lightboxVideo.autoplay = true;
+                lightboxVideo.playsInline = true;
+                lightboxVideo.play();
+            } else {
+                lightboxVideo.style.display = "none";
+                lightboxImg.style.display = "block";
+                lightboxImg.src = src;
+            }
+        }
 
-       function openLightbox(index) {
+        function openLightbox(index) {
             currentIndex = index;
             const item = items[currentIndex];
-
-            // If the media is inside a link, get the img/video inside it
             const media = item.querySelector("img, video");
             if (!media) return;
 
-            // Show image or video
-            if (media.tagName === "IMG") {
-                lightboxVideo.style.display = "none";
-                lightboxImg.style.display = "block";
-                lightboxImg.src = media.src;
-            } else {
-                lightboxImg.style.display = "none";
-                lightboxVideo.style.display = "block";
-                lightboxVideo.src = media.src;
-                lightboxVideo.play();
-            }
+            clearInterval(autoSlideInterval);
+            showHero(media.src, media.tagName === "VIDEO");
 
-            // Show caption if exists
-            const caption = item.dataset.caption || "";
-            lightboxCaption.textContent = caption;
+            lightboxCaption.textContent = item.dataset.caption || "";
+
+            dotsContainer.innerHTML = "";
+            const galleryItems = item.dataset.gallery ? item.dataset.gallery.split(",").map(s => s.trim()) : [];
+            currentDotIndex = 0;
+            dotElements = [];
+
+            if (galleryItems.length > 0) {
+                galleryItems.forEach((src, i) => {
+                    const dot = document.createElement("span");
+                    dot.classList.add("lightbox-heart");
+                    if (i === 0) dot.classList.add("active");
+
+                    dot.addEventListener("click", e => {
+                        e.stopPropagation();
+                        currentDotIndex = i;
+                        showHero(src, src.endsWith(".mp4"));
+                        updateDots();
+                        resetAutoSlide();
+                    });
+
+                    dotsContainer.appendChild(dot);
+                    dotElements.push(dot);
+                });
+
+                function updateDots() {
+                    dotElements.forEach((d, i) => d.classList.toggle("active", i === currentDotIndex));
+                }
+
+                function resetAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(() => {
+                        currentDotIndex = (currentDotIndex + 1) % galleryItems.length;
+                        showHero(galleryItems[currentDotIndex], galleryItems[currentDotIndex].endsWith(".mp4"));
+                        updateDots();
+                    }, 2500);
+                }
+
+                resetAutoSlide();
+            }
 
             lightbox.classList.add("active");
         }
-        
-        // Open lightbox on media click
+
         items.forEach((item, index) => {
             const media = item.querySelector("img, video");
             if (!media) return;
-
             media.addEventListener("click", e => {
-                e.preventDefault(); // prevent navigating if it's a link
+                e.preventDefault();
                 openLightbox(index);
             });
         });
 
-        // Close lightbox on background click
         lightbox.addEventListener("click", () => {
             lightbox.classList.remove("active");
             lightboxVideo.pause();
             lightboxVideo.src = "";
+            clearInterval(autoSlideInterval);
         });
 
-        // Stop clicks inside content from closing
         lightboxContent.addEventListener("click", e => e.stopPropagation());
 
-      prevBtn.addEventListener("click", e => {
+        prevBtn.addEventListener("click", e => {
             e.stopPropagation();
             openLightbox((currentIndex - 1 + items.length) % items.length);
         });
@@ -80,8 +123,8 @@
             e.stopPropagation();
             openLightbox((currentIndex + 1) % items.length);
         });
-
     });
+
 </script>
 
 
@@ -95,13 +138,10 @@
     </a>
     <main class="grid-container">
 
-        <div class="grid-item square"  data-caption="Demi Lovato Invite">
-            <img src="elements/goodworld/DemiLovato_Invite_02.png"></img>
-        </div>
-        
-<div class="grid-item square">
-    <img src="elements/goodworld/GWHolidayMerch_HoodieBack_03a.png"></img>
-</div>
+    <div class="grid-item square" data-caption="Demi Lovato Invite"
+        data-gallery="elements/goodworld/DemiLovato_Invite_02.png, elements/goodworld/DemiLovato_Invite-_02h.png">
+        <img src="elements/goodworld/DemiLovato_Invite_02.png">
+    </div>
 
 
 <a href="https://www.instagram.com/p/DTvxXZHEe5q/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank"
@@ -123,24 +163,16 @@
             </div>
         </a>
         
-
-        <div class="grid-item portrait">
-            <img src="elements/goodworld/GWHolidayMerch_HoodieBack_01a.png"</img>
-        </div>
-
+            <div class="grid-item portrait" data-caption="Demi Lovato Invite"
+                data-gallery="elements/goodworld/GWHolidayMerch_HoodieBack_01a.png, elements/goodworld/shorts.png, elements/goodworld/GWHolidayMerch_HoodieBack_03a.png">
+                <img src="elements/goodworld/GWHolidayMerch_HoodieBack_01a.png">
+            </div>
+            
         <div class="grid-item portrait">
             <img src="elements/goodworld/TsuLangeYorxPenfolds_Flyer_04b.png" </img>
         </div>
 
-<div class="grid-item square">
-    <img src="elements/goodworld/shorts.png"></img>
-</div>
-
-
-<div class="grid-item square">
-    <img src="elements/goodworld/DemiLovato_Invite-_02h.png"></img>
-</div>
-
+        
     <div class="grid-item square">
         <img src="elements/goodworld/BarMarmont_NightPeople_Invite_01.png"></img>
     </div>
@@ -157,21 +189,25 @@
 </body>
 
 <div class="lightbox" id="lightbox">
-    <button class="lightbox-arrow prev">←</button>
-
     <div class="lightbox-content">
-        <img id="lightbox-img" />
-        <video id="lightbox-video" controls></video>
+        <div class="lightbox-hero">
+            <img id="lightbox-img" />
+            <video id="lightbox-video" controls></video>
+        </div>
+
         <div class="lightbox-caption" id="lightbox-caption"></div>
+        <div id="lightbox-dots"></div>
     </div>
 
-<button class="lightbox-arrow prev">
-    <img src="elements/wikibook/arrowbtn.png" alt="Previous">
-</button>
+    <button class="lightbox-arrow prev">
+        <img src="elements/wikibook/arrowbtn.png" alt="Previous">
+    </button>
 
-<button class="lightbox-arrow next">
-    <img src="elements/wikibook/arrowbtn2.png" alt="Next">
-</button>
+    <button class="lightbox-arrow next">
+        <img src="elements/wikibook/arrowbtn2.png" alt="Next">
+    </button>
+</div>
+
 
 </div>
 
