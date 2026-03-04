@@ -22,24 +22,64 @@
 
         const items = Array.from(document.querySelectorAll(".grid-item"));
         let currentIndex = 0;
-        let autoSlideInterval;
+        let autoSlideTimeout;
+
+        // Lifted to outer scope so showHero can always access them
         let currentDotIndex = 0;
         let dotElements = [];
+        let galleryItems = [];
 
-        function showHero(src, isVideo = false) {
-            if (isVideo || src.endsWith(".mp4")) {
+        function updateDots() {
+            dotElements.forEach((d, i) => d.classList.toggle("active", i === currentDotIndex));
+        }
+
+        function nextSlide() {
+            currentDotIndex = (currentDotIndex + 1) % galleryItems.length;
+            showHero(galleryItems[currentDotIndex]);
+            updateDots();
+        }
+
+        function resetAutoSlide() {
+            clearTimeout(autoSlideTimeout);
+            lightboxVideo.onended = null;
+
+            const src = galleryItems[currentDotIndex];
+            if (!src) return;
+
+            if (src.endsWith(".mp4")) {
+                // Video: advance when it ends
+                lightboxVideo.onended = () => nextSlide();
+            } else {
+                // Image/GIF: advance after 2.1s
+                autoSlideTimeout = setTimeout(() => nextSlide(), 2100);
+            }
+        }
+
+        function showHero(src) {
+            clearTimeout(autoSlideTimeout);
+            lightboxVideo.onended = null;
+
+            if (src.endsWith(".mp4")) {
                 lightboxImg.style.display = "none";
                 lightboxVideo.style.display = "block";
-                lightboxVideo.src = src;
+                lightboxVideo.src = encodeURI(src);
                 lightboxVideo.muted = true;
-                lightboxVideo.loop = true;
+                lightboxVideo.loop = false;
                 lightboxVideo.autoplay = true;
                 lightboxVideo.playsInline = true;
-                lightboxVideo.play();
+
+                lightboxVideo.oncanplaythrough = () => {
+                    lightboxVideo.play();
+                    // Set onended here so it fires after this specific video
+                    lightboxVideo.onended = () => nextSlide();
+                };
             } else {
+                lightboxVideo.pause();
                 lightboxVideo.style.display = "none";
                 lightboxImg.style.display = "block";
-                lightboxImg.src = src;
+                lightboxImg.src = encodeURI(src);
+                // Start auto-advance timer for images/GIFs
+                autoSlideTimeout = setTimeout(() => nextSlide(), 2100);
             }
         }
 
@@ -49,54 +89,48 @@
             const media = item.querySelector("img, video");
             if (!media) return;
 
-            clearInterval(autoSlideInterval);
-            showHero(media.src, media.tagName === "VIDEO");
-
-            lightboxCaption.textContent = item.dataset.caption || "";
-
-            dotsContainer.innerHTML = "";
-            const galleryItems = item.dataset.gallery ? item.dataset.gallery.split(",").map(s => s.trim()) : [];
+            // Reset state
+            clearTimeout(autoSlideTimeout);
+            lightboxVideo.onended = null;
             currentDotIndex = 0;
             dotElements = [];
+            galleryItems = item.dataset.gallery
+                ? item.dataset.gallery.split(",").map(s => s.trim())
+                : [];
+
+            lightboxCaption.textContent = item.dataset.caption || "";
+            dotsContainer.innerHTML = "";
 
             if (galleryItems.length > 0) {
                 galleryItems.forEach((src, i) => {
                     const dot = document.createElement("span");
                     dot.classList.add("lightbox-heart");
+                    dot.dataset.src = src;
                     if (i === 0) dot.classList.add("active");
 
                     dot.addEventListener("click", e => {
                         e.stopPropagation();
                         currentDotIndex = i;
-                        showHero(src, src.endsWith(".mp4"));
+                        clearTimeout(autoSlideTimeout);
+                        showHero(src);
                         updateDots();
-                        resetAutoSlide();
                     });
 
                     dotsContainer.appendChild(dot);
                     dotElements.push(dot);
                 });
 
-                function updateDots() {
-                    dotElements.forEach((d, i) => d.classList.toggle("active", i === currentDotIndex));
-                }
-
-                function resetAutoSlide() {
-                    clearInterval(autoSlideInterval);
-                    autoSlideInterval = setInterval(() => {
-                        currentDotIndex = (currentDotIndex + 1) % galleryItems.length;
-                        showHero(galleryItems[currentDotIndex], galleryItems[currentDotIndex].endsWith(".mp4"));
-                        updateDots();
-                    }, 2100);
-                }
-
-                resetAutoSlide();
+                showHero(galleryItems[0]);
+            } else {
+                // No gallery — just show the clicked item directly
+                showHero(media.src);
             }
 
             lightbox.classList.add("active");
         }
 
         items.forEach((item, index) => {
+            if (item.dataset.lightbox === "false") return;
             const media = item.querySelector("img, video");
             if (!media) return;
             media.addEventListener("click", e => {
@@ -109,7 +143,8 @@
             lightbox.classList.remove("active");
             lightboxVideo.pause();
             lightboxVideo.src = "";
-            clearInterval(autoSlideInterval);
+            lightboxVideo.onended = null;
+            clearTimeout(autoSlideTimeout);
         });
 
         lightboxContent.addEventListener("click", e => e.stopPropagation());
@@ -124,7 +159,6 @@
             openLightbox((currentIndex + 1) % items.length);
         });
     });
-
 </script>
 
 
@@ -138,54 +172,59 @@
     </a>
     <main class="grid-container">
 
-    <div class="grid-item square" data-caption="Demi Lovato Music Video Release Party Invite"
-        data-gallery="elements/goodworld/DemiLovato_Invite_02.png, elements/goodworld/DemiLovato_Invite-_02h.png">
-        <img src="elements/goodworld/DemiLovato_Invite_02.png">
-    </div>
+        <div class="grid-item square" data-caption="Charli xcx The Moment x Facetune Photobooth"
+            data-gallery="elements/goodworld/charli-xcx/nytcharli.png, elements/goodworld/charli-xcx/charli.png, elements/goodworld/charli-xcx/IG_Overlay_Approved.gif, elements/goodworld/charli-xcx/facetunevid.mp4, elements/goodworld/charli-xcx/facetunegrid.jpg, elements/goodworld/charli-xcx/screen.jpg, elements/goodworld/charli-xcx/photostrip.png, elements/goodworld/charli-xcx/photostrip-video.mp4, elements/goodworld/charli-xcx/GIF_Overlay_Approved.gif">
+            <img src="elements/goodworld/charli-xcx/nytcharli.png">
+        </div>
 
 
-<a href="https://www.instagram.com/p/DTvxXZHEe5q/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank"
-    rel="noopener noreferrer">
-    <div class="grid-item square" data-lightbox="false">
-        <video src="elements/goodworld/1U-eiJVh0ya-1ee1.mp4" autoplay loop muted></video>
-    </div>
-</a>
-
-<div class="grid-item square">
-    <img src="elements/goodworld/TameImpala_AfterInvite_03.png"></img>
-</div>
+        <div class="grid-item square" data-caption="Demi Lovato Music Video Release Party Invite"
+            data-gallery="elements/goodworld/DemiLovato_Invite_02.png, elements/goodworld/DemiLovato_Invite-_02h.png">
+            <img src="elements/goodworld/DemiLovato_Invite_02.png">
+        </div>
 
 
-        <a href="https://www.instagram.com/p/DOrnYOJlaPt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank"
-            rel="noopener noreferrer">
+        <a href="https://www.instagram.com/p/DTvxXZHEe5q/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            target="_blank" rel="noopener noreferrer">
+            <div class="grid-item square" data-lightbox="false">
+                <video src="elements/goodworld/1U-eiJVh0ya-1ee1.mp4" autoplay loop muted></video>
+            </div>
+        </a>
+
+        <div class="grid-item square">
+            <img src="elements/goodworld/TameImpala_AfterInvite_03.png"></img>
+        </div>
+
+
+        <a href="https://www.instagram.com/p/DOrnYOJlaPt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            target="_blank" rel="noopener noreferrer">
             <div class="grid-item square">
                 <img src="elements/goodworld/PaperxDemiLovato_Invite_03d.png"></img>
             </div>
         </a>
-        
-            <div class="grid-item portrait" data-caption="Good World Holiday Merch"
-                data-gallery="elements/goodworld/GWHolidayMerch_HoodieBack_01a.png, elements/goodworld/shorts.png, elements/goodworld/GWHolidayMerch_HoodieBack_03a.png">
-                <img src="elements/goodworld/GWHolidayMerch_HoodieBack_01a.png">
-            </div>
-            
+
+        <div class="grid-item portrait" data-caption="Good World Holiday Merch"
+            data-gallery="elements/goodworld/GWHolidayMerch_HoodieBack_01a.png, elements/goodworld/shorts.png, elements/goodworld/GWHolidayMerch_HoodieBack_03a.png">
+            <img src="elements/goodworld/GWHolidayMerch_HoodieBack_01a.png">
+        </div>
+
         <div class="grid-item portrait">
             <img src="elements/goodworld/TsuLangeYorxPenfolds_Flyer_04b.png" </img>
         </div>
 
 
-    <div class="grid-item square">
-        <img src="elements/goodworld/BarMarmont_NightPeople_Invite_01.png"></img>
-    </div>
+        <div class="grid-item square">
+            <img src="elements/goodworld/BarMarmont_NightPeople_Invite_01.png"></img>
+        </div>
 
-<a href="https://www.youtube.com/watch?v=3vceEWBH2EE" target="_blank"
-    rel="noopener noreferrer">
-    <div class="grid-item square">
-        <video src="elements/goodworld/CharlotteLawrence_Somewhere_LyricVideo.mp4" autoplay loop muted></video>
-    </div>
-</a>
+        <a href="https://www.youtube.com/watch?v=3vceEWBH2EE" target="_blank" rel="noopener noreferrer">
+            <div class="grid-item square">
+                <video src="elements/goodworld/CharlotteLawrence_Somewhere_LyricVideo.mp4" autoplay loop muted></video>
+            </div>
+        </a>
 
     </main>
-            <br>
+    <br>
 </body>
 
 <div class="lightbox" id="lightbox">
